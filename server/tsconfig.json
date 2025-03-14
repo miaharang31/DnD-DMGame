@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
+    "target": "es2016",
+    "module": "commonjs",
     "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "esModuleInterop": true
+    "skipLibCheck": true,
   },
   "include": ["src/**/*", "server.ts"],
   "exclude": ["node_modules"]
 }
-  
