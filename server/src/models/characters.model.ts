@@ -1,6 +1,6 @@
 import { RowDataPacket } from "mysql2";
 
-export default interface Characters extends RowDataPacket {
+export default interface Character extends RowDataPacket {
     id?: number;
     userid?: number; //linked to the owner of the character
     name?: string;
@@ -16,10 +16,12 @@ export default interface Characters extends RowDataPacket {
     traits?: JSON;
     savingThrows?: JSON; // holding all the proficiencies
     skills?: JSON; // holding all the proficiencies
-    // abilityScores?: JSON;
     languages?: JSON;
     expertise?: JSON;
     featuresTraits?: JSON;
+    equipment?: JSON;
+
+    attacks?: JSON;
 
     // Derived Stats
     hp?: number;
@@ -34,4 +36,17 @@ export default interface Characters extends RowDataPacket {
     ideals?: string;
     bonds?: string;
     flaws?: string;
+
+    // Visuals
+    age?: number;
+    height?: string;
+    weight?: number;
+    eyes?: string;
+    skin?: string;
+    hair?: string;
+
+    // Bag and Allies
+    allies?: string;
+    treasure?: string;
+    backstory?: string;
 }
