@@ -1,11 +1,25 @@
 import { RowDataPacket } from "mysql2";
 
+export interface AbilityScores {
+    strength: number;
+    dexterity: number;
+    constitution: number;
+    intelligence: number;
+    wisdom: number;
+    charisma: number;
+}
+
 export default interface Character extends RowDataPacket {
     id?: number;
     userid?: number; //linked to the owner of the character
     name?: string;
     
     level?: number;
+    insperation?: number;
+
+    abilityScores?: AbilityScores;
+    experiencePoints?: number;
+    proficiencyBonus?: number;
 
     // References API
     race?: string;
@@ -22,6 +36,7 @@ export default interface Character extends RowDataPacket {
     equipment?: JSON;
 
     attacks?: JSON;
+    spells?: JSON;
 
     // Derived Stats
     hp?: number;
